@@ -1,0 +1,29 @@
+task hello {
+//    println 'hello world.'
+    println "${project.projectDir}"
+}
+
+//自定义task,复制文件
+task copyFile(type: Copy) {
+    from '../app/build/outputs/mapping'
+    into 'd:/git_project_v2/mappings'
+}
+
+//task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
+//    group = "Reporting"
+//    description = "Generate Jacoco coverage reports"    // exclude auto-generated classes and tests
+//    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', 'android/**/*.*']
+//    def debugTree = fileTree(dir: "${project.buildDir}/intermediates/classes/debug", excludes: fileFilter)
+//    def mainSrc = "${project.projectDir}src/main/java"
+////    sourceDirectories = files([mainSrc])
+////    classDirectories = files([debugTree])
+////    additionalSourceDirs = files(["${buildDir}/generated/source/buildConfig/debug", "${buildDir}/generated/source/r/debug"])
+////    executionData = fileTree(dir: project.projectDir, includes: ['**/*.exec', '**/*.ec'])
+//    reports {
+//        xml.enabled = true
+////        xml.destination = "${buildDir}/jacocoTestReport.xml"
+//        csv.enabled = false
+//        html.enabled = true
+////        html.destination = "${buildDir}/reports/jacoco"
+//    }
+//}
